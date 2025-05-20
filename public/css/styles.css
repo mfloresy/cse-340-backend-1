@@ -4,3 +4,138 @@
 *:after {
   box-sizing: border-box;
 }
+
+.car-brands-navigation{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    background-color: rgb(42, 42, 42);
+    color: white;
+    list-style: none;
+    padding: 10px;
+}
+
+.welcome-car-section{
+  color: black;
+}
+
+.upgrades-car-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  list-style: none;
+}
+
+#top-header{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.upgrades-picture-container{
+    background-color: skyblue;
+    text-align: -webkit-center;
+    height: 70px;
+    margin: 2%;
+    border: solid;
+}
+
+.image-upgrades{
+      width: 60px;
+}
+
+.welcome-picture{
+    width: 100%;
+    position: relative;
+    max-width: 500px;
+}
+
+.deloran-welcome-description{
+    background: rgb(255 255 255 / 66%);
+    float: inline-start;
+    z-index: 1;
+    position: absolute;
+}
+
+.welcome-car-title{
+  color:black;
+}
+
+.delorean-title-box{
+    margin: 0;
+    color: #00b2fa;
+    font-weight: bold;
+}
+
+.delorean-box-description{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #00b2fa;
+    font-weight: bold;
+}
+
+.car-upgrades-link{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 200px 1fr;
+        font-family: system-ui;
+}
+
+.siteName > a{
+  font-size: xx-large;
+  text-decoration: none;
+  color: black;
+}
+
+#tools > a{
+  margin-left: 50%;
+  text-decoration: none;
+  color: black;
+}
+
+.own-delorean-btn{
+  background: skyblue;
+  font-weight: bold;
+}
+
+.delorean-reviews{
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.delorean-upgrades{
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+@media (orientation: landscape) {
+  main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 250px;
+    font-family: system-ui;
+  }
+
+  .welcome-car-section{
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .delorean-reviews{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .delorean-upgrades{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+}
