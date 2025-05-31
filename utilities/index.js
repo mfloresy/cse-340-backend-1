@@ -64,24 +64,17 @@ Util.buildClassificationGrid = async function(data){
 * ************************************ */
 Util.buildVehicleGrid = async function(data){
   console.log("Data near backticks: ", data)
-  
-
   if (data){
     return `
-    <p>Vehicle</p>
-    <p>id: ${data.inv_id}</p>
-    <p>name: ${data.inv_make}</p>
-    <p>Model: ${data.inv_model}</p>
-    <p>Year: ${data.inv_year}</p>
-    <p>Description: ${data.inv_description}</p>
-    <img src="${data.inv_image}" alt=""/>
+    <h3>${data.inv_make} ${data.inv_model} Details</h3>
     <p>Price: ${data.inv_price}</p>
-    <p>Miles: ${data.inv_miles}</p>
+    <p>Description: ${data.inv_description}</p>
     <p>Color: ${data.inv_color}</p>
-    <p>Classification id: ${data.classification_id}</p>
+    <p>Miles: ${data.inv_miles}</p>
+    <img src="${data.inv_image}" alt=""/>
     `
   } else { 
-    grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
+    grid += '<p class="notice">Sorry, no matching vehicle could be found.</p>'
   }
   return grid
 }
