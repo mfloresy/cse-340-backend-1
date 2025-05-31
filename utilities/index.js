@@ -57,6 +57,24 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
+
+
+/* **************************************
+* Build the classification view HTML
+* ************************************ */
+Util.buildVehicleGrid = async function(data){
+  console.log("Data near backticks: ", data)
+  if (data){
+    return `
+    <p>This is a new Vehicle</p>
+    `
+  } else { 
+    grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
+  }
+  return grid
+}
+
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 
