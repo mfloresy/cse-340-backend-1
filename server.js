@@ -10,7 +10,9 @@ const express = require("express")
 const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
+const invRoute = require("./routes/inventoryRoute")
 const baseController = require("./controllers/baseController")
+const invController = require("./controllers/invController")
 const utilities = require("./utilities/index")
 
 /* ***********************
@@ -24,9 +26,13 @@ app.set("layout", "./layouts/layout.ejs") // not at views root
  * Routes
  *************************/
 app.use(static)
+app.use(invRoute)
 
 // Index route
 app.get("/", utilities.handleErrors(baseController.buildHome)) 
+
+// Inventory routes
+app.use("/inv", utilities.handleErrors(invController.buildByClassificationId))
 
 /* 
 app.get("/", function(req, res){
@@ -43,7 +49,11 @@ app.get("/", function(req, res){
 app.use(async (err, req, res, next) => {
   let nav = await utilities.getNav()
   console.error(`Error at: "${req.originalUrl}": ${err.message}`)
-  if(err.status == 404){ message = err.message} else {message = 'Oh no! There was a crash. Maybe try a different route?'}
+  if(err.status == 404){ 
+    message = err.message
+  } else {
+    message = 'Oh no! There was a crash. Maybe try a different route?'
+  }
   res.render("errors/error", {
     title: err.status || 'Server Error',
     message,
