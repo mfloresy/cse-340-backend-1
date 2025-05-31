@@ -65,6 +65,7 @@ Util.buildClassificationGrid = async function(data){
 Util.buildVehicleGrid = async function(data){
   console.log("Data near backticks: ", data)
   
+
   if (data){
     return `
     <p>Vehicle</p>
@@ -73,8 +74,7 @@ Util.buildVehicleGrid = async function(data){
     <p>Model: ${data.inv_model}</p>
     <p>Year: ${data.inv_year}</p>
     <p>Description: ${data.inv_description}</p>
-    <p>Image: ${data.inv_image}</p>
-    <p>Thumbnail: ${data.inv_thumbnail}</p>
+    <img src="${data.inv_image}" alt=""/>
     <p>Price: ${data.inv_price}</p>
     <p>Miles: ${data.inv_miles}</p>
     <p>Color: ${data.inv_color}</p>
