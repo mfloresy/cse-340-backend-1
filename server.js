@@ -34,13 +34,6 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 // Inventory routes
 app.use("/inv", utilities.handleErrors(invController.buildByClassificationId))
 
-/* 
-app.get("/", function(req, res){
-  res.render("index", {title: "home"})
-}) 
-*/
-
-
 // File Not Found Route - must be last route in list
 /* ***********************
 * Express Error Handler
