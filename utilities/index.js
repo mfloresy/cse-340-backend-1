@@ -66,12 +66,14 @@ Util.buildVehicleGrid = async function(data){
   console.log("Data near backticks: ", data)
   if (data){
     return `
+    <div class='single-car-details'>
+    <img src="${data.inv_image}" alt=""/>
     <h3>${data.inv_make} ${data.inv_model} Details</h3>
     <p>Price: ${data.inv_price}</p>
-    <p>Description: ${data.inv_description}</p>
+    <p>Description: <span>${data.inv_description}</span></p>
     <p>Color: ${data.inv_color}</p>
     <p>Miles: ${data.inv_miles}</p>
-    <img src="${data.inv_image}" alt=""/>
+    </div>
     `
   } else { 
     grid += '<p class="notice">Sorry, no matching vehicle could be found.</p>'

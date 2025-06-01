@@ -28,7 +28,7 @@
 
 #top-header{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr;
 }
 
@@ -134,6 +134,15 @@
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+  padding-left: 0;
+}
+
+#tools {
+  text-align-last: end;
+}
+
+#tools > a{
+      margin-left: 0;
 }
 
 .car-box{
@@ -143,6 +152,22 @@
   list-style: none;
   text-align: -webkit-center;
   border: double;
+}
+
+.single-car-details{
+  
+}
+
+.single-car-details > img{
+  width: 100%;
+}
+
+.single-car-details > p{
+  font-weight: bold;
+}
+
+.single-car-details > p > span{
+  font-weight: initial;
 }
 
 @media (orientation: landscape) {
