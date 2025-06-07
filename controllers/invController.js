@@ -22,6 +22,43 @@ invCont.buildByClassificationId = async function (req, res, next) {
   })
 }
 
+invCont.buildAddingClassificationForm = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  let form = await utilities.getAddingClassificationForm()
+  res.render("./inventory/addclassification", {
+    title: "Add Classification",
+    nav,
+    form,
+  })
+}
+
+invCont.buildAddingCarForm = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  let form = await utilities.getAddingCarForm()
+  const dropDown = await utilities.buildClassificationList()
+  res.render("./inventory/addinventory", {
+    title: "Add Inventory",
+    nav,
+    form,
+    dropDown,
+  })
+}
+
+invCont.buildSuccessConfirmationClassif = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("./inventory/successclassification", {
+    title: "Classification Successfully recorded",
+    nav
+  })
+}
+
+invCont.buildSuccessConfirmationcar = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("./inventory/successcar", {
+    title: "Inventory Successfully recorded",
+    nav
+  })
+}
 
 /* ***************************
  *  Build vehicle by classification view
@@ -37,6 +74,18 @@ invCont.buildByVehicleId = async function (req, res, next) {
     title: `${data[0].inv_year} ${data[0].inv_make} ${data[0].inv_model}`,
     nav,
     grid,
+  })
+}
+
+
+invCont.buildAddClassificationsAndCars = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  let links = await utilities.getClassifAndCarLinks()
+  req.flash("notice", "This is a flash message.")
+  res.render("./inventory/management", {
+    title: `Management Site`,
+    nav,
+    links
   })
 }
 

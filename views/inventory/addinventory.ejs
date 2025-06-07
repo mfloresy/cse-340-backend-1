@@ -1,0 +1,16 @@
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+<%- messages() %>
+
+<form id="successform" action="/inv/successcar" method="POST">
+    <%- dropDown %>
+    <input type="text" required placeholder="">
+    <input type="text" required placeholder="">
+    <input type="text" required placeholder="">
+    <input type="text" required placeholder="">
+    <input type="text" required placeholder="">
+    <input type="submit" required placeholder="Submit">
+</form>
