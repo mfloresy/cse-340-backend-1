@@ -7,10 +7,14 @@
 
 <form id="successformcar" action="/inv/successcar" method="POST">
     <%- dropDown %>
-    <input type="text" required placeholder="">
-    <input type="text" required placeholder="">
-    <input type="text" required placeholder="">
-    <input type="text" required placeholder="">
-    <input type="text" required placeholder="">
+    <input type="text" required placeholder="inv_make" name="inv_make">
+    <input type="text" required placeholder="inv_model" name="inv_model">
+    <input type="text" required placeholder="inv_year" name="inv_year">
+    <input type="text" required placeholder="inv_description" name="inv_description">
+    <input type="text" required placeholder="inv_image" name="inv_image">
+    <input type="text" required placeholder="inv_thumbnail" name="inv_thumbnail">
+    <input type="number" required placeholder="inv_price" name="inv_price">
+    <input type="number" required placeholder="inv_miles" name="inv_miles">
+    <input type="text" required placeholder="inv_color" name="inv_color">
     <input type="submit" required placeholder="Submit">
 </form>

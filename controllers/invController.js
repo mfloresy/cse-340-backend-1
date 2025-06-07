@@ -45,8 +45,8 @@ invCont.buildAddingCarForm = async function (req, res, next) {
 }
 
 invCont.buildSuccessConfirmationClassif = async function (req, res) {
-  console.log("req.body: ", req.body)
-  console.log("req.params: ", req.params)
+  console.log("req.boby: ", req.body)
+  const response = await invModel.registerClassification(req.body.classification_name)
   let nav = await utilities.getNav()
   res.render("./inventory/successclassification", {
     title: "Classification Successfully recorded",
@@ -55,8 +55,20 @@ invCont.buildSuccessConfirmationClassif = async function (req, res) {
 }
 
 invCont.buildSuccessConfirmationcar = async function (req, res) {
-  console.log("req.body: ", req.body)
-  console.log("req.params: ", req.params)
+  console.log("req.boby: ", req.body)
+  const {
+    inv_make, 
+    inv_model, 
+    inv_year, 
+    inv_description, 
+    inv_image, 
+    inv_thumbnail, 
+    inv_price, 
+    inv_miles, 
+    inv_color, 
+    classification_id
+  } = req.body
+  const response = await invModel.registerCar(inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id)
   let nav = await utilities.getNav()
   res.render("./inventory/successcar", {
     title: "Inventory Successfully recorded",
