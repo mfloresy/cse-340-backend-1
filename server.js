@@ -5,6 +5,7 @@
 /* ***********************
  * Require Statements
  *************************/
+const bodyParser = require("body-parser")
 const expressLayouts = require("express-ejs-layouts")
 const express = require("express")
 const env = require("dotenv").config()
@@ -21,6 +22,10 @@ const pool = require('./database/')
 /* ***********************
  * Middleware
  * ************************/
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
+
  app.use(session({
   store: new (require('connect-pg-simple')(session))({
     createTableIfMissing: true,
@@ -57,7 +62,7 @@ app.use(invRoute)
 app.get("/", utilities.handleErrors(baseController.buildHome)) 
 
 // Inventory routes
-app.use("/inv", utilities.handleErrors(invController.buildByClassificationId))
+app.use("/inv", utilities.handleErrors(invController.buildByClassificationId)) 
 
 app.use("/newerror", utilities.handleErrors(errorController.newError))
 

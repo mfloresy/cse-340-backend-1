@@ -44,7 +44,9 @@ invCont.buildAddingCarForm = async function (req, res, next) {
   })
 }
 
-invCont.buildSuccessConfirmationClassif = async function (req, res, next) {
+invCont.buildSuccessConfirmationClassif = async function (req, res) {
+  console.log("req.body: ", req.body)
+  console.log("req.params: ", req.params)
   let nav = await utilities.getNav()
   res.render("./inventory/successclassification", {
     title: "Classification Successfully recorded",
@@ -52,7 +54,9 @@ invCont.buildSuccessConfirmationClassif = async function (req, res, next) {
   })
 }
 
-invCont.buildSuccessConfirmationcar = async function (req, res, next) {
+invCont.buildSuccessConfirmationcar = async function (req, res) {
+  console.log("req.body: ", req.body)
+  console.log("req.params: ", req.params)
   let nav = await utilities.getNav()
   res.render("./inventory/successcar", {
     title: "Inventory Successfully recorded",

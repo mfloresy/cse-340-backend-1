@@ -5,7 +5,7 @@
 } %>
 <%- messages() %>
 
-<form id="successform" action="/inv/successclassification" method="POST">
-    <input type="text" placeholder="Classification Name" required name="classification_name">
-    <input type="submit" value="Add Classification">
+<form id="successformclassif" action="/inv/successclassification" method="POST">
+    <input id="classification_name" type="text" placeholder="Classification Name" required name="classification_name">
+    <input id="add_classification" type="submit" name="add_classification" value="Add Classification">
 </form>
