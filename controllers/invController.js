@@ -25,6 +25,7 @@ invCont.buildByClassificationId = async function (req, res, next) {
 invCont.buildAddingClassificationForm = async function (req, res, next) {
   let nav = await utilities.getNav()
   let form = await utilities.getAddingClassificationForm()
+  req.flash("notice", "Name cannot contain a space or special characters.")
   res.render("./inventory/addclassification", {
     title: "Add Classification",
     nav,
@@ -97,7 +98,6 @@ invCont.buildByVehicleId = async function (req, res, next) {
 invCont.buildAddClassificationsAndCars = async function (req, res, next) {
   let nav = await utilities.getNav()
   let links = await utilities.getClassifAndCarLinks()
-  req.flash("notice", "This is a flash message.")
   res.render("./inventory/management", {
     title: `Management Site`,
     nav,
